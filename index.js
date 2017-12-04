@@ -4,7 +4,7 @@ const Path = require('path')
 // const oneTxtPath = Path.join(__dirname, 'data', '1.txt')
 // writeTimestamp(oneTxtPath)
 
-const { callDelay, callSyncAll, callPromiseAll } = require('./challenge/1-delay')
+const { callDelay, callSyncAll, callPromiseAll, callPromiseRace } = require('./challenge/1-delay')
 
 // Challenge 1
 callDelay(2000)
@@ -14,3 +14,6 @@ callSyncAll(400, 500, 700)
 
 // Challenge 3
 callPromiseAll(400, 500, 700)
+
+// Promise.race
+callPromiseRace(400, 500, 700)

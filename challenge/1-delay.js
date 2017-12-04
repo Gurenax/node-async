@@ -48,4 +48,16 @@ function callPromiseAll(duration1, duration2, duration3) {
   })
 }
 
-module.exports = { callDelay, callSyncAll, callPromiseAll }
+function callPromiseRace(duration1, duration2, duration3) {
+  console.time(`delay Promise.race`)
+  Promise.race([
+    delay(duration1),
+    delay(duration2),
+    delay(duration3)
+  ])
+  .then( value => {
+    console.timeEnd(`delay Promise.race`)
+  })
+}
+
+module.exports = { callDelay, callSyncAll, callPromiseAll, callPromiseRace }
